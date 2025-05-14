@@ -6,16 +6,17 @@ block main
         .row
             .col-12
                 +box-head(pageTitle)
-
-        .col-3.mb-3
-            .product-item
-                    .inner-image
-                        img(
-                            src="/images/logo.png"
-                            alt="Logo"
-                        )
-                    .inner-content
-                        h3.inner-title iPhone 9
-                        .inner-price-new 2000đ
-                        .inner-price-old 3000đ
-                        .inner-discount Giảm 1000đ
+        .row
+            each item in products
+                .col-3.mb-3
+                    .product-item
+                            .inner-image
+                                img(
+                                    src=item.thumbnail
+                                    alt=item.title
+                                )
+                            .inner-content
+                                h3.inner-title #{item.title}
+                                .inner-price-new #{item.newPrice}đ
+                                .inner-price-old #{item.price}đ
+                                .inner-discount Giảm #{item.discountPercentage}đ
