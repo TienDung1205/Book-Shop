@@ -1,1 +1,37 @@
-header Header
+
+header.header 
+    .container 
+        .row.align-items-center 
+            .col-2
+                .inner-logo 
+                    a(href="/")
+                        img(src="/images/logo.png", alt = "Logo")
+            .col-5
+                .inner-menu 
+                    ul 
+                        li 
+                            a(href="/") Trang chủ
+                        li
+                            a(href="/products") Sản phẩm
+                        li
+                            a(href="/about") Liên hệ
+            .col-3
+                form(
+                        class="text-right"
+                        action=`/search`
+                        method="GET"
+                    )
+                        .input-group 
+                            input(
+                                type="text"
+                                placeholder="Tìm kiếm"
+                                class="form-control"
+                                name="keyword"
+                                value=keyword
+                            )
+                            .input-group-append
+                                button(
+                                    class = "btn btn-success"
+                                    type="submit"
+                                ) Tìm kiếm
+            .col-2
